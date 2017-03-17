@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="register-page">
+    <div class="form">
+      <form class="register-form">
+        <input #username placeholder="username"/>
+        <input #password placeholder="password"/>
+        <button (click)="register(username.value,password.value)">create</button>
+        <p class="message">Already registered? <a [routerLink]="['/login']" >Sign In</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

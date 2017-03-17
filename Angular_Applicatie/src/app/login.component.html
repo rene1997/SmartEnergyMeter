@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div class="login-page">
+    <h2>Login:</h2>
+    <div class="form">
+      <form class="login-form">
+        <input #username placeholder="username"/>
+        <input #password placeholder="password"/>
+        <button (click)="login(username.value,password.value)">login</button>
+        <p class="message">Not registered? <a [routerLink]="['/register']" >Create an account</a></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

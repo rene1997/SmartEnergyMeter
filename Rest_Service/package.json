@@ -1,17 +1,29 @@
 {
-  "name": "untitled1",
-  "version": "0.0.0",
-  "private": true,
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "rest api for super smart energy meter",
+  "main": "app.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rene1997/AngularToDoList.git"
+  },
+  "keywords": [
+    "angular",
+    "node",
+    "rest-api",
+    "moongodb",
+    "mongoose"
+  ],
+  "author": "Rene Keijzer and Malek Sediqi",
+  "license": "ISC",
   "dependencies": {
-    "body-parser": "~1.16.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.0",
-    "express": "~4.14.1",
-    "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "serve-favicon": "~2.3.2"
-  }
+    "express": "4.15.2",
+"mongoose":"4.8.7",
+"body-parser":"1.17.1"
+  },
+  "homepage": "https://github.com/rene1997/AngularToDoList#readme"
 }

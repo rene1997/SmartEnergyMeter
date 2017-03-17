@@ -1,63 +1,63 @@
-/**
- * Created by rkeet on 2/8/2017.
- */
-
+ /**
+* Created by renek on 9-3-2017.
+*/
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var moment = require('moment');
-var mysql = require('mysql');
+var database = require('./DatabaseConnection');
 
-function getClient(){
-    var c = mysql.createConnection({
-        host:'localhost',
-        user:'root',
-        password:'5af43de3',
-        database:'metingen'
+ //call this function with post message with this body
+ //{username: 'user', password: 'password'}
+ //return value is userdata in json
+router.post('/login', function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+    var userId;
+    console.log("user: " + username + " tries to login with: \npassword: " + password);
+    database.getUserId(username,password,function (id) {
+        res.json(id);
     });
-    c.connect();
-    return c;
-}
-
-router.get('/getData', function(req,res){
-    res.status(200);
-
-    res.json({"description":"data"});
 });
 
-router.post('/sendData', function(req, res){
-	console.log(req.body);
-	res.status(200);
-	res.json({"status": "success"});
-});	
-
-router.post('/addData', function(req,res){
-    var value = req.body.sensorValue;
-    var time = moment(new Date()).format('MMMM Do YYYY, h:mm a');
-    console.log("got data: " + value);
-    var c = getClient();
-    c.query(`SELECT COUNT(*) FROM metingen;`, function(err,rows){
-        var id = rows[0]['COUNT(*)'];
-        console.log('id: '+ id);
-        c.end();
-        c = getClient();
-        c.query(`INSERT INTO metingen VALUES(${id}, '${time}', 'data', ${value});`,null,function(err,rows){
-            if(err){
-                console.log(err);
-                res.status(500);
-                res.json({"status":err})
-            }else{
-                res.status(200);
-                res.json({"status":"added data"})
-            }
-            c.end();
-        });
+ //call this funtion with post message with this body
+ //{serverkey: 'key', username: 'user', password: 'password'}
+ //return value is {userId: number}
+router.post('/adduser', function(req,res){
+    var username = req.body.username;
+    var password = req.body.password;
+    database.addUser(username, password, function(userdata){
+        res.json(userdata);
     });
-         
+});
+
+router.post('/addtodo', function(req,res){
+   var userId = req.body.userId;
+   var todoString = req.body.todo;
+   database.addTodo(userId, todoString, function(todoData){
+       console.log("got:");
+       console.log(todoData);
+       res.json(todoData);
+   })
 });
 
 
-//all unknown calls:
+router.post('/completetodo', function(req,res){
+    var userId = req.body.userId;
+    var todoId = req.body.todoId;
+    var isCompleted = req.body.isCompleted;
+    database.completeTodo(userId,todoId,isCompleted,function (data){
+       res.json(data);
+    });
+});
+
+router.post('/gettodos', function(req,res){
+   var userId = req.body.userId;
+   database.getTodos(userId,function(data){
+      res.json(data);
+   });
+});
+
+ //all unknown calls:
 router.get('*', function(req,res){
     res.json({
         "description": "unknown call"
@@ -65,4 +65,3 @@ router.get('*', function(req,res){
 });
 
 module.exports = router;
-
