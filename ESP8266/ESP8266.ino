@@ -28,7 +28,7 @@ void setup() {
 }
 
 void loop() {
-  checkSensor();
+  checkSensor();dfv
   delay(5);
   timer ++;
   if(timer >= checkTimeSeconds * 200){
