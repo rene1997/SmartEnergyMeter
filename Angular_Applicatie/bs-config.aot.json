@@ -1,9 +1,9 @@
 {
   "open": false,
   "logLevel": "silent",
-  "port": 8080,
+  "port": 80,
   "server": {
-    "baseDir": "aot",
+    "baseDir": "src",
     "routes": {
       "/node_modules": "node_modules"
     },
