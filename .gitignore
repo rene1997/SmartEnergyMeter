@@ -1,4 +1,7 @@
 /Rest_Service/node_modules
+/Rest_Service/npm-debug.log
+
 /Angular_Applicatie/node_modules
 /Angular_Applicatie/npm-debug.log
+
 /.idea/workspace.xml

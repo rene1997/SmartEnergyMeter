@@ -1,5 +1,5 @@
 {
-  "name": "Super Smart Home (rest-api)",
+  "name": "ssh-rest-service",
   "version": "1.0.0",
   "description": "rest api for SSH Energy Monitor",
   "main": "app.js",
