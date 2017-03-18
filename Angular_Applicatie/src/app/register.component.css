@@ -1,5 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+h2 {
+  font-size: 2em;
+  margin-top: 0;
+  padding-top: 0;
+  color: #333;
+  text-align: center;
+}
+
 .register-page {
   width: 360px;
   padding: 8% 0 0;
