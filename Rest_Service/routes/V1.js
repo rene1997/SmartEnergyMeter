@@ -14,7 +14,8 @@ router.post('/login', function(req,res){
     var password = req.body.password;
     var userId;
     console.log("user: " + username + " tries to login with: \npassword: " + password);
-    database.getUserId(username,password,function (id) {
+    database.getUserId(username,password,function (status,id) {
+        res.status(status)
         res.json(id);
     });
 });
@@ -30,32 +31,32 @@ router.post('/adduser', function(req,res){
     });
 });
 
-router.post('/addtodo', function(req,res){
-   var userId = req.body.userId;
-   var todoString = req.body.todo;
-   database.addTodo(userId, todoString, function(todoData){
-       console.log("got:");
-       console.log(todoData);
-       res.json(todoData);
-   })
-});
-
-
-router.post('/completetodo', function(req,res){
-    var userId = req.body.userId;
-    var todoId = req.body.todoId;
-    var isCompleted = req.body.isCompleted;
-    database.completeTodo(userId,todoId,isCompleted,function (data){
-       res.json(data);
-    });
-});
-
-router.post('/gettodos', function(req,res){
-   var userId = req.body.userId;
-   database.getTodos(userId,function(data){
-      res.json(data);
-   });
-});
+// router.post('/addtodo', function(req,res){
+//    var userId = req.body.userId;
+//    var todoString = req.body.todo;
+//    database.addTodo(userId, todoString, function(todoData){
+//        console.log("got:");
+//        console.log(todoData);
+//        res.json(todoData);
+//    })
+// });
+//
+//
+// router.post('/completetodo', function(req,res){
+//     var userId = req.body.userId;
+//     var todoId = req.body.todoId;
+//     var isCompleted = req.body.isCompleted;
+//     database.completeTodo(userId,todoId,isCompleted,function (data){
+//        res.json(data);
+//     });
+// });
+//
+// router.post('/gettodos', function(req,res){
+//    var userId = req.body.userId;
+//    database.getTodos(userId,function(data){
+//       res.json(data);
+//    });
+// });
 
  //all unknown calls:
 router.get('*', function(req,res){

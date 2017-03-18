@@ -1,29 +1,28 @@
 {
-  "name": "rest-api",
+  "name": "Super Smart Home (rest-api)",
   "version": "1.0.0",
-  "description": "rest api for super smart energy meter",
+  "description": "rest api for SSH Energy Monitor",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rene1997/AngularToDoList.git"
+    "url": "https://github.com/rene1997/SmartEnergyMeter.git"
   },
   "keywords": [
-    "angular",
-    "node",
+    "nodejs",
     "rest-api",
     "moongodb",
-    "mongoose"
+    "mongoose",
+    "Super_Smart_Home"
   ],
   "author": "Rene Keijzer and Malek Sediqi",
   "license": "ISC",
   "dependencies": {
     "express": "4.15.2",
-"mongoose":"4.8.7",
-"body-parser":"1.17.1"
+    "mongoose":"4.8.7",
+    "body-parser":"1.17.1"
   },
-  "homepage": "https://github.com/rene1997/AngularToDoList#readme"
+  "homepage": "https://github.com/rene1997/SmartEnergyMeter#readme"
 }
