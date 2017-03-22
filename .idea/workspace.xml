@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="799ae306-e25d-4998-93f2-14453ebaefad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/systemjs.config.server.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/bs-config.aot.json" afterPath="$PROJECT_DIR$/Angular_Applicatie/bs-config.aot.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/package.json" afterPath="$PROJECT_DIR$/Angular_Applicatie/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/index.html" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/main.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/main.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/main.ts" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ESP8266/sensor_test/sensor_test.ino" afterPath="$PROJECT_DIR$/ESP8266/sensor_test/sensor_test.ino" />
-    </list>
+    <list default="true" id="799ae306-e25d-4998-93f2-14453ebaefad" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -310,12 +299,12 @@
       <workItem from="1489833117342" duration="1376000" />
       <workItem from="1489846709266" duration="391000" />
       <workItem from="1490174140722" duration="4833000" />
-      <workItem from="1490190130032" duration="2000" />
+      <workItem from="1490190130032" duration="48000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9517000" />
+    <option name="totallyTimeSpent" value="9563000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="20" width="1366" height="748" extended-state="0" />
