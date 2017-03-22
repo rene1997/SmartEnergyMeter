@@ -1,5 +1,5 @@
 {
-  "open": false,
+  "open": true,
   "logLevel": "silent",
   "port": 80,
   "server": {
