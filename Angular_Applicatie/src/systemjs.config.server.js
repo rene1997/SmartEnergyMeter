@@ -23,7 +23,8 @@
             '@angular/http': 'npm:@angular/http/bundles/http.umd.min.js',
             '@angular/router': 'npm:@angular/router/bundles/router.umd.min.js',
             '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.min.js',
-            '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.min.js',
+            '@angular/forms': 'npm:@ang' +
+            'ular/forms/bundles/forms.umd.min.js',
             '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.min.js',
             '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.min.js',
             // other libraries
