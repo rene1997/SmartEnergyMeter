@@ -10,6 +10,6 @@ void setup() {
 void loop() {
   int sensorValue = analogRead(sensorInput); 
   Serial.println(String("currenty value: ") + sensorValue);
-  digitalWrite(2, sensorValue > 5);
+  digitalWrite(2, sensorValue > 20);
   delay(100);
 }
