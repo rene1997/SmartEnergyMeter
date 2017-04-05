@@ -27,6 +27,7 @@
             'ular/forms/bundles/forms.umd.min.js',
             '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.min.js',
             '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.min.js',
+            'ng2-charts': "node_modules/ng2-charts",
             // other libraries
             'rxjs':                      'npm:rxjs@5.0.1',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
@@ -37,6 +38,7 @@
                 main: './main.js',
                 defaultExtension: 'js'
             },
+            'ng2-charts': { main: "ng2-charts.js", defaultExtension: "js" },
             rxjs: {
                 defaultExtension: 'js'
             }
