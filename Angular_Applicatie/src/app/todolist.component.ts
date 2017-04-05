@@ -16,8 +16,8 @@ export class ToDo{
 })
 
 export class TodoListComponent implements OnInit{
-  private gettodoUrls= "http://87.195.159.225:8081/apiV1/gettodos";
-  private addTodoUrl= "http://87.195.159.225:8081/apiV1/addtodo";
+  private gettodoUrls= "http://keijzersoft.nl:8081/apiV1/gettodos";
+  private addTodoUrl= "http://keijzersoft.nl:8081/apiV1/addtodo";
 
   private todos :ToDo[];
   constructor(

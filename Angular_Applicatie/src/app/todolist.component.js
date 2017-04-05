@@ -23,8 +23,8 @@ var TodoListComponent = (function () {
         this.route = route;
         this.router = router;
         this.http = http;
-        this.gettodoUrls = "http://87.195.159.225:8081/apiV1/gettodos";
-        this.addTodoUrl = "http://87.195.159.225:8081/apiV1/addtodo";
+        this.gettodoUrls = "http://keijzersoft.nl:8081/apiV1/gettodos";
+        this.addTodoUrl = "http://keijzersoft.nl:8081/apiV1/addtodo";
     }
     TodoListComponent.prototype.ngOnInit = function () {
         this.getToDos();

@@ -2,7 +2,7 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var settings = require('./config.json');
-var version1 = require('./routes/V1')
+var version1 = require('./routes/V1');
 
 var app = express();
 app.use(bodyParser.urlencoded());
