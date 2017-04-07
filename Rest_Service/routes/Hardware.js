@@ -6,7 +6,7 @@ var moment = require('moment');
 var userfile = require('./User');
 var database = require('./DatabaseConnection');
 
-function SyncMeasurements(databasehardwareDevices) {
+function SyncMeasurements(hardwareDevices) {
     database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function (table) {
         for(var i = 0; i < hardwareDevices.length; i ++){
             var deviceId = hardwareDevices[i].hardwareId;
