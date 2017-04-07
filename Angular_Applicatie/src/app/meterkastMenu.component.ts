@@ -3,16 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response }          from '@angular/http';
 import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
 
-export class ToDo{
-  todoId:number;
-  note:string;
-}
-
 @Component({
   moduleId: module.id,
   selector: 'meterkastMenu',
-  templateUrl:'./meterkastMenu-component.html',
-  styleUrls:['./meterkastMenu-component.css']
+  templateUrl:'./meterkastMenu.component.html',
+  styleUrls:['./meterkastMenu.component.css']
 })
 
 export class MeterkastMenuComponent{
