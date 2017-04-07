@@ -35,7 +35,7 @@ var LoginComponent = (function () {
     };
     LoginComponent.prototype.loginResponse = function (res) {
         console.info(res['_body']);
-        this.router.navigate(['todolist']);
+        this.router.navigate(['meterkastMenu']);
     };
     LoginComponent.prototype.handleError = function (error) {
         console.info(error.toString());

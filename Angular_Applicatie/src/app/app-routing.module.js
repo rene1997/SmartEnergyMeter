@@ -12,12 +12,12 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
-var todolist_component_1 = require('./todolist.component');
+var meterkastMenu_component_1 = require('./meterkastMenu-component');
 var routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: login_component_1.LoginComponent },
     { path: 'register', component: register_component_1.RegisterComponent },
-    { path: 'todolist', component: todolist_component_1.TodoListComponent }
+    { path: 'meterkastMenu', component: meterkastMenu_component_1.MeterkastMenuComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

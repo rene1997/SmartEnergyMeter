@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit{
 
   loginResponse(res: Response){
     console.info(res['_body']);
-    this.router.navigate(['todolist']);
+    this.router.navigate(['meterkastMenu']);
   }
 
   handleError(error:Response){
