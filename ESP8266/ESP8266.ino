@@ -2,68 +2,55 @@
 #define sensorInput A0  
 
 //WIFI fields:
-const char* ssid = "Keijzer";
-const char* password = "bassuselirenbar5";
+const char* ssid = "AndroidAP";
+const char* password = "7e3f8e8c95de";
 
 //rest service fields:
 const char* host = "87.195.159.225";
 const int httpPort = 8081;
-const char* sendDataUrl = "/apiV1/sendData";
+const char* sendDataUrl = "/apiV1/addmeasurement";
+const char* serverkey = "175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3";
 const int deviceId = 1;
+const int defaultkwh = 375;
 
 //pin fields
-const int checkValue = 20;
-bool sensorValue = false;
-int amountOfInterrupts = 0;
-
-//time fields for sending data to server
-const int checkTimeSeconds = 60;
-int timer = 0;
-
+const int checkValue = 200;
+bool isBlackLine = false;
 
 void setup() {
   Serial.begin(9600);
-  setupHardware();
+  pinMode(sensorInput, INPUT);
+  pinMode(2, OUTPUT);
   setupWIFI();
 }
 
 void loop() {
-  checkSensor();dfv
-  delay(5);
-  timer ++;
-  if(timer >= checkTimeSeconds * 200){
-    Serial.println(String("sending data to server \namount of interrupts: ") + amountOfInterrupts);
-    sendSensorData();
-    //reset values
-    timer = amountOfInterrupts =0;
-  }
-}
-
-//function to set the pin layout
-void setupHardware(){
-  pinMode(sensorInput, INPUT);
-  pinMode(2, OUTPUT);
-  Serial.println(String("default analog value: ") + analogRead(sensorInput));
-  sensorValue = analogRead(sensorInput) > checkValue; 
-  Serial.println(String("currenty value: ") + sensorValue);
+  delay(2);
+  checkSensor();
 }
 
 //function to check the light sensor from analog pin 0 (A0)
 void checkSensor(){
-  bool newSensorValue = analogRead(sensorInput) > checkValue;
-  if(sensorValue == newSensorValue)
-    return;         //nothing changed go sleep
-    
-  //Serial.println(String("new sensor data: ") + newSensorValue);
-  sensorValue = newSensorValue;
-  digitalWrite(2, !sensorValue);
-  if(sensorValue)
-    amountOfInterrupts ++;  
+  bool sensorValue = analogRead(sensorInput) > checkValue;
+  
+  if(isBlackLine == sensorValue)
+    return;
+  isBlackLine = sensorValue;
+
+  //burn onboard led
+  digitalWrite(2, !isBlackLine);
+  
+  if(isBlackLine)
+    sendSensorData();
 }
+
 
 //function to send the sensor data to the server
 void sendSensorData(){
-  String data = String("SensorValue=") + amountOfInterrupts + "&DeviceId=" + deviceId;
+  String data = String("kwh=") + defaultkwh + 
+    "&hardwareId=" + deviceId +
+    "&serverKey=" + serverkey
+    ;
   SendPostRequest(data, sendDataUrl);
 }
 

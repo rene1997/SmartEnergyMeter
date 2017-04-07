@@ -13,10 +13,12 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var http_1 = require('@angular/http');
 var app_routing_module_1 = require('./app-routing.module');
+var ng2_charts_1 = require('ng2-charts/ng2-charts');
 var app_component_1 = require('./app.component');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
-var todolist_component_1 = require('./todolist.component');
+var hardware_component_1 = require('./hardware.component');
+var meterkastMenu_component_1 = require('./meterkastMenu.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -26,12 +28,14 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 app_routing_module_1.AppRoutingModule,
                 forms_1.FormsModule,
-                http_1.JsonpModule
+                http_1.JsonpModule,
+                ng2_charts_1.ChartsModule
             ],
             declarations: [app_component_1.AppComponent,
                 login_component_1.LoginComponent,
                 register_component_1.RegisterComponent,
-                todolist_component_1.TodoListComponent
+                hardware_component_1.HardwareComponent,
+                meterkastMenu_component_1.MeterkastMenuComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

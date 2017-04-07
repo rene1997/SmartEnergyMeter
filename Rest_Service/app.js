@@ -1,8 +1,10 @@
 var express = require('express');
 var path = require('path');
+var scheduler = require('node-schedule')
 var bodyParser = require('body-parser');
 var settings = require('./config.json');
-var version1 = require('./routes/V1')
+var version1 = require('./routes/V1');
+var hardware = require('./routes/Hardware');
 
 var app = express();
 app.use(bodyParser.urlencoded());
@@ -34,4 +36,8 @@ app.use('/apiV1', version1);
 //start server
 var server = app.listen( settings.webPort , function() {
     console.log('Listening server on port ' + server.address().port );
+});
+
+scheduler.scheduleJob('0 * * * *',function (){
+   hardware.SyncMeasurementData();
 });
