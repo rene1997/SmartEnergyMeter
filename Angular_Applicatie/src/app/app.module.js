@@ -17,7 +17,8 @@ var ng2_charts_1 = require('ng2-charts/ng2-charts');
 var app_component_1 = require('./app.component');
 var login_component_1 = require('./login.component');
 var register_component_1 = require('./register.component');
-var meterkastMenu_component_1 = require('./meterkastMenu-component');
+var hardware_component_1 = require('./hardware.component');
+var meterkastMenu_component_1 = require('./meterkastMenu.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,6 +34,7 @@ var AppModule = (function () {
             declarations: [app_component_1.AppComponent,
                 login_component_1.LoginComponent,
                 register_component_1.RegisterComponent,
+                hardware_component_1.HardwareComponent,
                 meterkastMenu_component_1.MeterkastMenuComponent
             ],
             bootstrap: [app_component_1.AppComponent]

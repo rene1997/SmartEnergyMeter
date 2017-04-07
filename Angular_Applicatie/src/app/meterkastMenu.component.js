@@ -9,12 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ToDo = (function () {
-    function ToDo() {
-    }
-    return ToDo;
-}());
-exports.ToDo = ToDo;
 var MeterkastMenuComponent = (function () {
     function MeterkastMenuComponent() {
         this.gettodoUrls = "http://keijzersoft.nl:8081/apiV1/gettodos";
@@ -44,12 +38,12 @@ var MeterkastMenuComponent = (function () {
         core_1.Component({
             moduleId: module.id,
             selector: 'meterkastMenu',
-            templateUrl: './meterkastMenu-component.html',
-            styleUrls: ['./meterkastMenu-component.css']
+            templateUrl: './meterkastMenu.component.html',
+            styleUrls: ['./meterkastMenu.component.css']
         }), 
         __metadata('design:paramtypes', [])
     ], MeterkastMenuComponent);
     return MeterkastMenuComponent;
 }());
 exports.MeterkastMenuComponent = MeterkastMenuComponent;
-//# sourceMappingURL=meterkastMenu-component.js.map
+//# sourceMappingURL=meterkastMenu.component.js.map

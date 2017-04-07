@@ -8,7 +8,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { AppComponent }  from './app.component';
 import {LoginComponent}  from'./login.component';
 import {RegisterComponent} from'./register.component';
-import {MeterkastMenuComponent} from './meterkastMenu-component';
+import {HardwareComponent} from'./hardware.component';
+import {MeterkastMenuComponent} from './meterkastMenu.component';
 
 @NgModule({
   imports: [ BrowserModule,
@@ -21,6 +22,7 @@ import {MeterkastMenuComponent} from './meterkastMenu-component';
   declarations: [ AppComponent,
                   LoginComponent,
                   RegisterComponent,
+                  HardwareComponent,
                   MeterkastMenuComponent
                 ],
   bootstrap:    [ AppComponent]
