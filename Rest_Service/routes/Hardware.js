@@ -4,43 +4,10 @@
 
 var moment = require('moment');
 var userfile = require('./User');
-var mongoose = require('mongoose');
-var mongoDatabase = "mongodb://localhost/SmartMeter";
+var database = require('./DatabaseConnection');
 
-var HardwareDevices     = "HardwareDevices";
-var LiveMeasurements    = "LiveMeasurements";
-var HistoryMeasurement  = "HistoryMeasurement";
-
-
-var HardwareDevicesSchema = new mongoose.Schema({
-    hardwareId : Number,
-    hardwareName : String
-});
-
-var LiveMeasurementsSchema = new mongoose.Schema({
-    hardwareId  : Number,
-    Time        : {type: Date, default : Date.now},
-    kwh         : Number
-});
-
-var HistoryMeasurementSchema = new mongoose.Schema({
-    hardwareId  : Number,
-    usedPower   : Number,
-    Time        : {type: Date, default: Date.now}
-});
-
-function connectToDatabase(tablename, tableSchema, callback){
-    var table = mongoose.model(tablename, tableSchema);
-    if(mongoose.connection.readyState == 1) return callback(table);
-
-    mongoose.connect(mongoDatabase);
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function(){callback(table)});
-}
-
-function SyncMeasurements(hardwareDevices) {
-    connectToDatabase(LiveMeasurements, LiveMeasurementsSchema, function (table) {
+function SyncMeasurements(databasehardwareDevices) {
+    database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function (table) {
         for(var i = 0; i < hardwareDevices.length; i ++){
             var deviceId = hardwareDevices[i].hardwareId;
             table.find({hardwareId: deviceId}, function (err, data) {
@@ -64,7 +31,7 @@ function addLiveDataToHistory(liveData){
     console.log("device: " + hardwareId);
     console.log("total kwh: " + totalKwh);
     console.log("date: " + date.format());
-    connectToDatabase(HistoryMeasurement, HistoryMeasurementSchema, function (table) {
+    database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema, function (table) {
         var newMeasurement = new table({hardwareId: hardwareId, usedPower: totalKwh, Time: date.format()});
         newMeasurement.save(function(err){
             if(err) {
@@ -91,7 +58,7 @@ module.exports = {
         var date = new Date();
         var currentTime = date + (date.getTimezoneOffset() *60 *1000);
 
-        connectToDatabase(LiveMeasurements, LiveMeasurementsSchema, function(table){
+        database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function(table){
             var newMeasurement = new table({hardwareId: hardwareId, Time: currentTime, kwh: kWh});
             newMeasurement.save(function(err){
                 if(err) {
@@ -106,11 +73,11 @@ module.exports = {
     },
 
     RegisterDevice : function(req, res){
-        var deviceName = req.body.devicename;
-        var defaultUser = req.body.userid;
-        if(!deviceName || !defaultUser ) return;
+        var deviceName = req.body.deviceName;
+        var defaultUser = req.body.userId;
+        if(!deviceName  || !defaultUser ) return console.log("error with parameters");
 
-        connectToDatabase(HardwareDevices,HardwareDevicesSchema, function(table){
+        database.connectToDatabase(database.HardwareDevices,database.HardwareDevicesSchema, function(table){
             table.count({}, function(err,count){
                var newDevice = new table({hardwareId: count, hardwareName: deviceName});
                newDevice.save(function (err){
@@ -118,10 +85,16 @@ module.exports = {
                       res.status(500);
                       res.json({status:err});
                       return console.log(err);
-                  }else{
-                      console.log(newDevice);
-                      userfile.RegisterDeviceToUser(defaultUser, count, res);
                   }
+                  console.log(newDevice);
+                   database.connectToDatabase(database.UserRights, database.UserRightsSchema, function(table){
+                       var newUserRight = new table({userId : defaultUser, hardwareId : count});
+                       newUserRight.save(function(err){
+                           if(err) return res.json(err);
+                           res.json({status:"success", hardwareId : count});
+                           console.log("registered new device with user");
+                       });
+                   });
                });
             });
         });
@@ -129,7 +102,7 @@ module.exports = {
 
     GetCurrentMeasurement : function(req,res){
        var hardwareId = req.body.hardwareId;
-       connectToDatabase(LiveMeasurements, LiveMeasurementsSchema, function(table){
+        database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function(table){
            table.findOne({hardwareId : hardwareId},{},{sort:{Time:-1}},function (err, data) {
                if(err){
                    res.json(err);
@@ -143,13 +116,33 @@ module.exports = {
 
     SyncMeasurementData : function (req, res) {
         //get all hardware id's:
-        connectToDatabase(HardwareDevices,HardwareDevicesSchema, function (table) {
+        database.connectToDatabase(database.HardwareDevices,database.HardwareDevicesSchema, function (table) {
             table.find({}, function (err, data) {
                 if(err)
                     return console.log(err);
                 SyncMeasurements(data);
             });
         });
+    },
+
+    ReturnHardwareNames : function (hardwareIds, res){
+        database.connectToDatabase(database.HardwareDevices,database.HardwareDevicesSchema, function (table) {
+            var responseData = [];
+            table.find({}, function (err, data){
+                if(err){
+                    res.status(500);
+                    return console.log(err);
+                }
+                for(var i = 0; i < hardwareIds.length; i ++){
+                    var notFound = true;
+                    for(var j = 0; j < data.length || notFound; j++){
+                        if(data[i].hardwareId == hardwareIds[i].hardwareId){
+                            
+                        }
+                    }
+                }
+            });
+        })
     }
 }
 

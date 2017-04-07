@@ -8,51 +8,18 @@ var path = require('path');
 var userFile = require("./User");
 var hardwareFile = require("./Hardware");
 
- //call this function with post message with this body
- //{username: 'user', password: 'password'}
- //return value is userdata in json
 router.post("/login", userFile.UserLogin);
-
-
- //call this funtion with post message with this body
- //{serverkey: 'key', username: 'user', password: 'password'}
- //return value is {userId: number}
-router.post("/adduser", userFile.AddUser);
+router.post("/addUser", userFile.AddUser);
 router.post("/register", userFile.AddUser);
+router.post("/getDevices", userFile.GetAvailableDevices);
 
-router.post("/registerdevice", hardwareFile.RegisterDevice);
+router.post("/registerDevice", hardwareFile.RegisterDevice);
+router.post("/addMeasurement", hardwareFile.AddMeasurement);
+router.post("/getLastMeasurement", hardwareFile.GetCurrentMeasurement);
 
-router.post("/addmeasurement", hardwareFile.AddMeasurement);
-
-router.post("/getlastmeasurement", hardwareFile.GetCurrentMeasurement);
-
-
-// router.post('/addtodo', function(req,res){
-//    var userId = req.body.userId;
-//    var todoString = req.body.todo;
-//    database.addTodo(userId, todoString, function(todoData){
-//        console.log("got:");
-//        console.log(todoData);
-//        res.json(todoData);
-//    })
-// });
-//
-//
-// router.post('/completetodo', function(req,res){
-//     var userId = req.body.userId;
-//     var todoId = req.body.todoId;
-//     var isCompleted = req.body.isCompleted;
-//     database.completeTodo(userId,todoId,isCompleted,function (data){
-//        res.json(data);
-//     });
-// });
-//
-// router.post('/gettodos', function(req,res){
-//    var userId = req.body.userId;
-//    database.getTodos(userId,function(data){
-//       res.json(data);
-//    });
-// });
+router.post("*", function(req,res){
+   res.json({desription: "unknown call"}) ;
+});
 
  //all unknown calls:
 router.get('*', function(req,res){

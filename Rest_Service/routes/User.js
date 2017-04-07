@@ -3,24 +3,36 @@
  */
 
 var database = require('./DatabaseConnection');
+var hardware = require('./Hardware');
 
 var mongoose = require('mongoose');
-var mongoDatabase = "mongodb://localhost/SmartMeter";
 
-var UserRights = 'UserRights';
-var UserRightsSchema = new mongoose.Schema({
-    HardwareId  : Number,
-    UserId      : Number
-});
-
-function connectToDatabase(tablename, tableSchema, callback){
-    var table = mongoose.model(tablename, tableSchema);
-    if(mongoose.connection.readyState == 1) return callback(table);
-    mongoose.connect(mongoDatabase);
-    var db = mongoose.connection;
-    db.on('error', console.error.bind(console, 'connection error:'));
-    db.once('open', function(){callback(table)});
+function addUser(username, password, callback) {
+    database.connectToDatabase(database.Users, database.UserSchema, function(user) {
+        user.count({}, function (err, count) {
+            var newUser = new user({userId: count, userName: username, password: password});
+            newUser.save(function (err) {
+                if (err) console.log(err);
+                else console.log(newUser);
+                callback(newUser);
+            });
+        });
+    });
 }
+
+function getUserId(username, password, callback) {
+    database.connectToDatabase(database.Users, database.UserSchema,function(user) {
+        user.find({userName: username, password: password}, function (err, data) {
+            if (err) return console.error(err);
+            if (data.length > 0) {
+                callback(200, data[0]);
+            } else {
+                callback(401, {status: "no permission!"});
+            }
+        });
+    });
+}
+
 
 module.exports = {
     UserLogin : function (req, res) {
@@ -28,7 +40,7 @@ module.exports = {
         var password = req.body.password;
         var userId;
         console.log("user: " + username + " tries to login with: \npassword: " + password);
-        database.getUserId(username,password,function (status,id) {
+        getUserId(username,password,function (status,id) {
             res.status(status)
             res.json(id);
         });
@@ -45,16 +57,32 @@ module.exports = {
             res.json({status:"no permission!"});
             return;
         }
-        database.addUser(username, password, function(userdata){
+        addUser(username, password, function(userdata){
+            res.json(userdata);
         });
     },
 
     RegisterDeviceToUser : function(userId, hardwareId, res){
-        connectToDatabase(UserRights, UserRightsSchema, function(table){
-            var newUserRight = new table({UserId : userId, HardwareId : hardwareId});
+        database.connectToDatabase(database.UserRights, database.UserRightsSchema, function(table){
+            var newUserRight = new table({userId : userId, hardwareId : hardwareId});
             newUserRight.save(function(err){
                res.json({status:"success", hardwareId : hardwareId});
                console.log("registered new device with user");
+            });
+        });
+    },
+
+    GetAvailableDevices : function(req,res){
+        var userId = req.body.userId;
+        if(!userId) return res.status(401);
+
+        database.connectToDatabase(database.UserRights, databse.UserRightsSchema , function (table){
+            table.find({userId : userId}, function (err,data) {
+               if(err){
+                   res.status(500); res.body({error:err});
+                   return console.log(err)
+               }
+               hardware.ReturnHardwareNames(data, res);
             });
         });
     }
