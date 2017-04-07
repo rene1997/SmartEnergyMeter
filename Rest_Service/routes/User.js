@@ -4,6 +4,24 @@
 
 var database = require('./DatabaseConnection');
 
+var mongoose = require('mongoose');
+var mongoDatabase = "mongodb://localhost/SmartMeter";
+
+var UserRights = 'UserRights';
+var UserRightsSchema = new mongoose.Schema({
+    HardwareId  : Number,
+    UserId      : Number
+});
+
+function connectToDatabase(tablename, tableSchema, callback){
+    var table = mongoose.model(tablename, tableSchema);
+    if(mongoose.connection.readyState == 1) return callback(table);
+    mongoose.connect(mongoDatabase);
+    var db = mongoose.connection;
+    db.on('error', console.error.bind(console, 'connection error:'));
+    db.once('open', function(){callback(table)});
+}
+
 module.exports = {
     UserLogin : function (req, res) {
         var username = req.body.username;
@@ -28,7 +46,16 @@ module.exports = {
             return;
         }
         database.addUser(username, password, function(userdata){
-            res.json(userdata);
+        });
+    },
+
+    RegisterDeviceToUser : function(userId, hardwareId, res){
+        connectToDatabase(UserRights, UserRightsSchema, function(table){
+            var newUserRight = new table({UserId : userId, HardwareId : hardwareId});
+            newUserRight.save(function(err){
+               res.json({status:"success", hardwareId : hardwareId});
+               console.log("registered new device with user");
+            });
         });
     }
 }

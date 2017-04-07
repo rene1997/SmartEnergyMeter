@@ -3,6 +3,7 @@
  */
 
 var moment = require('moment');
+var userfile = require('./User');
 var mongoose = require('mongoose');
 var mongoDatabase = "mongodb://localhost/SmartMeter";
 
@@ -12,7 +13,8 @@ var HistoryMeasurement  = "HistoryMeasurement";
 
 
 var HardwareDevicesSchema = new mongoose.Schema({
-    hardwareId : Number
+    hardwareId : Number,
+    hardwareName : String
 });
 
 var LiveMeasurementsSchema = new mongoose.Schema({
@@ -35,11 +37,6 @@ function connectToDatabase(tablename, tableSchema, callback){
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'connection error:'));
     db.once('open', function(){callback(table)});
-}
-
-function Callback(err, data){
-    if(err) return err;
-    return data;
 }
 
 function SyncMeasurements(hardwareDevices) {
@@ -87,16 +84,15 @@ module.exports = {
 
         //check body data
         if(!kWh || !hardwareId){
-            console.log("wrong parameters!")
-            res.json({status:"error!!!!!!!"});
-            return;
+            res.json({status:"wrong body"});
+            return console.log("wrong parameters");
         }
 
         var date = new Date();
         var currentTime = date + (date.getTimezoneOffset() *60 *1000);
 
         connectToDatabase(LiveMeasurements, LiveMeasurementsSchema, function(table){
-            var newMeasurement = new table({hardwareId: hardwareId, Time: date, kwh: kWh});
+            var newMeasurement = new table({hardwareId: hardwareId, Time: currentTime, kwh: kWh});
             newMeasurement.save(function(err){
                 if(err) {
                     console.log(err);
@@ -105,6 +101,28 @@ module.exports = {
                     console.log("added: " + newMeasurement);
                     res.json({status: "success"});
                 }
+            });
+        });
+    },
+
+    RegisterDevice : function(req, res){
+        var deviceName = req.body.devicename;
+        var defaultUser = req.body.userid;
+        if(!deviceName || !defaultUser ) return;
+
+        connectToDatabase(HardwareDevices,HardwareDevicesSchema, function(table){
+            table.count({}, function(err,count){
+               var newDevice = new table({hardwareId: count, hardwareName: deviceName});
+               newDevice.save(function (err){
+                  if(err){
+                      res.status(500);
+                      res.json({status:err});
+                      return console.log(err);
+                  }else{
+                      console.log(newDevice);
+                      userfile.RegisterDeviceToUser(defaultUser, count, res);
+                  }
+               });
             });
         });
     },
@@ -124,7 +142,6 @@ module.exports = {
     },
 
     SyncMeasurementData : function (req, res) {
-
         //get all hardware id's:
         connectToDatabase(HardwareDevices,HardwareDevicesSchema, function (table) {
             table.find({}, function (err, data) {

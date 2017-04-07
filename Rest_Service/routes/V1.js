@@ -13,10 +13,14 @@ var hardwareFile = require("./Hardware");
  //return value is userdata in json
 router.post("/login", userFile.UserLogin);
 
+
  //call this funtion with post message with this body
  //{serverkey: 'key', username: 'user', password: 'password'}
  //return value is {userId: number}
 router.post("/adduser", userFile.AddUser);
+router.post("/register", userFile.AddUser);
+
+router.post("/registerdevice", hardwareFile.RegisterDevice);
 
 router.post("/addmeasurement", hardwareFile.AddMeasurement);
 
