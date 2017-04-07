@@ -125,22 +125,23 @@ module.exports = {
         });
     },
 
-    ReturnHardwareNames : function (hardwareIds, res){
+    ReturnHardwareNames : function (userRightData, res){
+        console.log(userRightData);
         database.connectToDatabase(database.HardwareDevices,database.HardwareDevicesSchema, function (table) {
             var responseData = [];
-            table.find({}, function (err, data){
+            table.find({}, function (err, hardwareData){
                 if(err){
                     res.status(500);
                     return console.log(err);
                 }
-                for(var i = 0; i < hardwareIds.length; i ++){
-                    var notFound = true;
-                    for(var j = 0; j < data.length || notFound; j++){
-                        if(data[i].hardwareId == hardwareIds[i].hardwareId){
-                            
+                for(var i = 0; i < userRightData.length; i ++){
+                    for(var j = 0; j < hardwareData.length; j++){
+                        if(hardwareData[j].hardwareId == userRightData[i].hardwareId){
+                            responseData.push(hardwareData[j]);
                         }
                     }
                 }
+                res.json(responseData);
             });
         })
     }

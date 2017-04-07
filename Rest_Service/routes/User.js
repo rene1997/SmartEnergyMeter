@@ -76,7 +76,7 @@ module.exports = {
         var userId = req.body.userId;
         if(!userId) return res.status(401);
 
-        database.connectToDatabase(database.UserRights, databse.UserRightsSchema , function (table){
+        database.connectToDatabase(database.UserRights, database.UserRightsSchema , function (table){
             table.find({userId : userId}, function (err,data) {
                if(err){
                    res.status(500); res.body({error:err});
