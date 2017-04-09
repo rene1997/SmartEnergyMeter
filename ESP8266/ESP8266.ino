@@ -2,8 +2,8 @@
 #define sensorInput A0  
 
 //WIFI fields:
-const char* ssid = "AndroidAP";
-const char* password = "7e3f8e8c95de";
+const char* ssid = "UPC248511208";
+const char* password = "TACCTSVB";
 
 //rest service fields:
 const char* host = "87.195.159.225";
@@ -11,10 +11,10 @@ const int httpPort = 8081;
 const char* sendDataUrl = "/apiV1/addmeasurement";
 const char* serverkey = "175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3";
 const int deviceId = 1;
-const int defaultkwh = 375;
+const int defaultkwh = 250;
 
 //pin fields
-const int checkValue = 200;
+const int checkValue = 700;
 bool isBlackLine = false;
 
 void setup() {
@@ -25,7 +25,7 @@ void setup() {
 }
 
 void loop() {
-  delay(2);
+  delay(50);
   checkSensor();
 }
 

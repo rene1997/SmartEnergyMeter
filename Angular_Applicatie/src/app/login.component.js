@@ -35,6 +35,8 @@ var LoginComponent = (function () {
     };
     LoginComponent.prototype.loginResponse = function (res) {
         console.info(res['_body']);
+        var obJson = JSON.parse(res['_body']);
+        console.log(obJson);
         this.router.navigate(['hardware']);
     };
     LoginComponent.prototype.handleError = function (error) {

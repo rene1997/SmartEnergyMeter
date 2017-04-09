@@ -13,7 +13,7 @@ import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
 
 export class LoginComponent implements OnInit{
   private loginUrl = "http://87.195.159.225:8081/apiV1/login";
-  
+  public userid:number;
   constructor(
     private route:ActivatedRoute,
     private router:Router,
@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit{
 
   loginResponse(res: Response){
     console.info(res['_body']);
+    var obJson = JSON.parse(res['_body']);
+    console.log(obJson);
     this.router.navigate(['hardware']);
   }
 

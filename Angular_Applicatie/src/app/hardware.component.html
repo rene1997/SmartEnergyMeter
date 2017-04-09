@@ -12,9 +12,8 @@
 
 <div class="container">
     <h2>Hardware list</h2>
-    <div class="list-group">
-        <a href="#" class="list-group-item">MeterkastRene<span class="badge">14</span></a>
-        <a href="#" class="list-group-item">MeterkastMalek<span class="badge">2</span></a>
+    <div class="list-group" *ngFor="let hardware of hardwares">
+        <a href="http://localhost/meterkastMenu" class="list-group-item">{{hardware.hardwareName}}<span class="badge">{{hardware.hardwareId}}</span></a>
     </div>
 </div>
 
