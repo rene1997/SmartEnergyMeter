@@ -6,6 +6,8 @@ var settings = require('./config.json');
 var version1 = require('./routes/V1');
 var hardware = require('./routes/Hardware');
 
+var moment = require('moment');
+
 var app = express();
 app.use(bodyParser.urlencoded());
 
@@ -33,12 +35,16 @@ app.all('*', function(req,res,next){
 
 app.use('/apiV1', version1);
 
+
 //start server
 var server = app.listen( settings.webPort , function() {
+    console.log("Server started at:" + moment().format());
     console.log('Listening server on port ' + server.address().port );
 });
 
+//start syncing each hour add x:00
 scheduler.scheduleJob('0 * * * *',function (){
     console.log("syncing measurements");
-   hardware.SyncMeasurementData();
+    hardware.SyncMeasurementData();
 });
+

@@ -23,14 +23,13 @@ function addLiveDataToHistory(liveData){
     if(!liveData[0]) return;
     var hardwareId = liveData[0].hardwareId;
     var totalKwh = liveData.length / liveData[0].kwh ;
-    var date = moment().add(2,'hours');
-    date = date.add(-1, 'hours');
+    var startHour = moment().add(1,"hour").format(); // -1 past hour +2 for local time
 
     console.log("device: " + hardwareId);
     console.log("total kwh: " + totalKwh);
-    console.log("date: " + date.format());
+    console.log("date: " + startHour);
     database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema, function (table) {
-        var newMeasurement = new table({hardwareId: hardwareId, usedPower: totalKwh, Time: date.format()});
+        var newMeasurement = new table({hardwareId: hardwareId, usedPower: totalKwh, time: startHour});
         newMeasurement.save(function(err){
             if(err) {
                 console.log(err);
@@ -70,11 +69,10 @@ module.exports = {
             return console.log("wrong parameters");
         }
 
-        var date = new Date();
-        var currentTime = date + (date.getTimezoneOffset() *60 *1000);
+        var date = moment().format();
 
         database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function(table){
-            var newMeasurement = new table({hardwareId: hardwareId, Time: currentTime, kwh: kWh});
+            var newMeasurement = new table({hardwareId: hardwareId, Time: date, kwh: kWh});
             newMeasurement.save(function(err){
                 if(err) {
                     console.log(err);
