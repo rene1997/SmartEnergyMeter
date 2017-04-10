@@ -17,6 +17,9 @@ router.post("/registerDevice", hardwareFile.RegisterDevice);
 router.post("/addMeasurement", hardwareFile.AddMeasurement);
 router.post("/getLastMeasurement", hardwareFile.GetCurrentMeasurement);
 
+router.post("/getHistory", hardwareFile.GetHistory);
+router.post("/getCurrentSpeed", hardwareFile.GetCurrentSpeed);
+
 router.post("*", function(req,res){
    res.json({desription: "unknown call"}) ;
 });

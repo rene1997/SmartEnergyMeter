@@ -142,6 +142,34 @@ module.exports = {
                 res.json(responseData);
             });
         })
+    },
+
+    GetHistory : function (req,res){
+        var hardwareId = req.body.hardwareId;
+        database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema, function (table) {
+           table.find({hardwareId : hardwareId}, function (err, data) {
+                if(err){
+                    console.log(err); res.status(500);
+                    return res.json(err);
+                }
+                res.json(data);
+           });
+        });
+    },
+    
+    GetCurrentSpeed : function (req,res) {
+        var hardwareId = req.body.hardwareId;
+        database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function (table){
+            table.find({hardwareId : hardwareId}).
+            limit(2).sort({time:'-1'}).exec(function (err, data) {
+                if(err){
+                    console.log("error while getting current speed: ");
+                    return res.json(err);
+                }
+                console.log(data)
+                return(res.json(data));
+            });
+        });
     }
 }
 
