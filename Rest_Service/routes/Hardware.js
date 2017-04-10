@@ -19,6 +19,8 @@ function SyncMeasurements(hardwareDevices) {
 }
 
 function addLiveDataToHistory(liveData){
+    console.log(liveData);
+    if(!liveData[0]) return;
     var hardwareId = liveData[0].hardwareId;
     var totalKwh = 0;
     var date = moment().add(2,'hours');
