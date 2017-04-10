@@ -41,6 +41,17 @@ function addLiveDataToHistory(liveData){
     });
 }
 
+function calculateDataSpeed(data, callback){
+    if(data.length < 2) return callback("not enough data");
+    var date1 = data[0].time;
+    var date2 = data[1].time;
+    var rotationValue = data[0].kwh;
+    var dateFormat = "YYYY-MM-DDTHH:mm:ss";
+    var output = moment.utc(moment(date1)).diff(moment(date2));
+    console.log("got output:" + output);
+    callback(output);
+}
+
 module.exports = {
     AddMeasurement : function(req, res){
         //read body data
@@ -167,7 +178,9 @@ module.exports = {
                     return res.json(err);
                 }
                 console.log(data)
-                return(res.json(data));
+                calculateDataSpeed(data,function (data) {
+                    res.json(data);
+                })
             });
         });
     }
