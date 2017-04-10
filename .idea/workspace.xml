@@ -32,11 +32,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hardware.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Hardware.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
+            <state relative-caret-position="315">
+              <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
               <folding>
                 <element signature="e#0#37#0" expanded="false" />
               </folding>
@@ -44,7 +44,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -89,8 +89,8 @@
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/index.html" />
         <option value="$PROJECT_DIR$/Rest_Service/app.js" />
         <option value="$PROJECT_DIR$/Rest_Service/routes/V1.js" />
-        <option value="$PROJECT_DIR$/Rest_Service/routes/Hardware.js" />
         <option value="$PROJECT_DIR$/Rest_Service/config.json" />
+        <option value="$PROJECT_DIR$/Rest_Service/routes/Hardware.js" />
       </list>
     </option>
   </component>
@@ -302,12 +302,12 @@
       <workItem from="1489846709266" duration="391000" />
       <workItem from="1490174140722" duration="4833000" />
       <workItem from="1491824433496" duration="1858000" />
-      <workItem from="1491830309731" duration="5997000" />
+      <workItem from="1491830309731" duration="6305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18427000" />
+    <option name="totallyTimeSpent" value="18735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="20" width="959" height="1059" extended-state="4" />
@@ -721,21 +721,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="82" column="25" lean-forward="true" selection-start-line="82" selection-start-column="25" selection-end-line="82" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="56" column="10" lean-forward="false" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

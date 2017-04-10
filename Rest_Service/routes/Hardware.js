@@ -42,14 +42,11 @@ function addLiveDataToHistory(liveData){
 }
 
 function calculateDataSpeed(data, callback){
-    //if(data.length < 2) return callback("not enough data");
+    if(data.length < 2) return callback("not enough data");
     var date1 = data[0].time;
-    //var date2 = data[1].time;
+    var date2 = data[1].time;
     var rotationValue = data[0].kwh;
-    //var diffMilliseconds = moment.utc(moment(date1)).diff(moment(date2));
-
-    //for testing
-    var diffMilliseconds = 27797;
+    var diffMilliseconds = moment.utc(moment(date1)).diff(moment(date2));
     var usageWH = (3600000 / diffMilliseconds) / rotationValue * 1000;
     var returnData =
         {
@@ -58,7 +55,6 @@ function calculateDataSpeed(data, callback){
             kw          : data[0].kwh,
             wh          : usageWH
         };
-
     callback(returnData);
 }
 
