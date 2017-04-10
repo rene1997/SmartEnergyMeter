@@ -6,7 +6,7 @@ var moment = require('moment');
 var userfile = require('./User');
 var database = require('./DatabaseConnection');
 
-function SyncMeasurements(databasehardwareDevices) {
+function SyncMeasurements(hardwareDevices) {
     database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function (table) {
         for(var i = 0; i < hardwareDevices.length; i ++){
             var deviceId = hardwareDevices[i].hardwareId;
@@ -19,6 +19,8 @@ function SyncMeasurements(databasehardwareDevices) {
 }
 
 function addLiveDataToHistory(liveData){
+    console.log(liveData);
+    if(!liveData[0]) return;
     var hardwareId = liveData[0].hardwareId;
     var totalKwh = 0;
     var date = moment().add(2,'hours');
