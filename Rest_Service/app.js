@@ -38,7 +38,7 @@ var server = app.listen( settings.webPort , function() {
     console.log('Listening server on port ' + server.address().port );
 });
 
-//scheduler.scheduleJob('0 * * * *',function (){
+scheduler.scheduleJob('0 * * * *',function (){
     console.log("syncing measurements");
    hardware.SyncMeasurementData();
-//});
+});

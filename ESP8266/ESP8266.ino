@@ -2,19 +2,18 @@
 #define sensorInput A0  
 
 //WIFI fields:
-const char* ssid = "UPC248511208";
-const char* password = "TACCTSVB";
+const char* ssid = "Keijzer";
+const char* password = "bassuselirenbar5";
 
 //rest service fields:
 const char* host = "87.195.159.225";
 const int httpPort = 8081;
 const char* sendDataUrl = "/apiV1/addmeasurement";
 const char* serverkey = "175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3";
-const int deviceId = 1;
-const int defaultkwh = 250;
-
+const int deviceId = 0;
+const int defaultkwh = 375;
 //pin fields
-const int checkValue = 700;
+const int checkValue = 100;
 bool isBlackLine = false;
 
 void setup() {

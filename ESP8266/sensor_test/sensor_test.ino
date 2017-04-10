@@ -12,4 +12,4 @@ void loop() {
   Serial.println(String("currenty value: ") + sensorValue);
   digitalWrite(2, sensorValue != 1024);
   delay(50);
-}
+}       

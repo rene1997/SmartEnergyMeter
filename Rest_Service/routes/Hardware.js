@@ -22,14 +22,10 @@ function addLiveDataToHistory(liveData){
     console.log(liveData);
     if(!liveData[0]) return;
     var hardwareId = liveData[0].hardwareId;
-    var totalKwh = 0;
+    var totalKwh = liveData.length / liveData[0].kwh ;
     var date = moment().add(2,'hours');
     date = date.add(-1, 'hours');
 
-    for(var i = 0; i < liveData.length; i ++){
-        if(liveData[i].kwh || liveData[i].kwh != null)
-            totalKwh += liveData[i].kwh;
-    }
     console.log("device: " + hardwareId);
     console.log("total kwh: " + totalKwh);
     console.log("date: " + date.format());
