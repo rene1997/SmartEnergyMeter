@@ -21,6 +21,7 @@ export class HardwareComponent implements OnInit{
 
     private getHardwareUrl = "http://87.195.159.225:8081/apiV1/getDevices";
     private hardwares:Hardwares[];
+    private userData : string;
     @ViewChild(LoginComponent) loginComponent:LoginComponent;
     userid:number;
     constructor(
@@ -30,6 +31,11 @@ export class HardwareComponent implements OnInit{
     ){}
 
     ngOnInit() {
+            var data = document.getElementById("userData");
+            if(!data)
+                return this.router.navigate(['login']);
+            console.log(data.innerHTML);
+            this.userData = JSON.parse(data.innerHTML);
             this.getHardware();
     }
 
@@ -37,7 +43,7 @@ export class HardwareComponent implements OnInit{
         let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
         let options = new RequestOptions({headers:headers});
         let urlSearchParams = new URLSearchParams();
-        urlSearchParams.append('userId', '' + '0');
+        urlSearchParams.append('userId', '' + this.userData["userId"]);
         urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
         let body = urlSearchParams.toString();
         return this.http.post(this.getHardwareUrl, body, options).subscribe(

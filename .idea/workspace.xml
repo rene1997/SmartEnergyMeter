@@ -3,13 +3,28 @@
   <component name="ChangeListManager">
     <list default="true" id="799ae306-e25d-4998-93f2-14453ebaefad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Rest_Service/routes/Hardware.js" afterPath="$PROJECT_DIR$/Rest_Service/routes/Hardware.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/main.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/main.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/main.js.map" />
     </list>
     <ignored path="$PROJECT_DIR$/Angular_Applicatie/node_modules/" />
     <ignored path="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js/" />
@@ -39,105 +54,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Hardware.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#37#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DatabaseConnection.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/routes/DatabaseConnection.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="meterkastMenu.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="meterkastMenu.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hardware.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="96" lean-forward="false" selection-start-line="15" selection-start-column="84" selection-end-line="15" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="hardware.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="435">
+              <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts">
+      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
-              <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+              <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#53#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -157,8 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html" />
-        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/bs-config.json" />
         <option value="$PROJECT_DIR$/Rest_Service/package.json" />
         <option value="$PROJECT_DIR$/Rest_Service/routes/DatabaseConnection.js" />
@@ -170,8 +111,11 @@
         <option value="$PROJECT_DIR$/Rest_Service/app.js" />
         <option value="$PROJECT_DIR$/Rest_Service/config.json" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.html" />
-        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts" />
         <option value="$PROJECT_DIR$/Rest_Service/routes/Hardware.js" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts" />
       </list>
     </option>
   </component>
@@ -186,9 +130,9 @@
     <handled-path value="$PROJECT_DIR$/Rest_Service/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="19" />
-    <option name="width" value="1366" />
-    <option name="height" value="748" />
+    <option name="y" value="20" />
+    <option name="width" value="1910" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -205,7 +149,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -228,7 +171,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Rest_Service" />
+              <option name="myItemId" value="Angular_Applicatie" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -242,17 +185,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Rest_Service" />
+              <option name="myItemId" value="Angular_Applicatie" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartEnergyMeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartEnergyMeter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Angular_Applicatie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -352,25 +318,27 @@
       <workItem from="1490174140722" duration="4833000" />
       <workItem from="1491824433496" duration="1858000" />
       <workItem from="1491830309731" duration="9143000" />
-      <workItem from="1491905036526" duration="290000" />
+      <workItem from="1491905036526" duration="667000" />
+      <workItem from="1491910872810" duration="605000" />
+      <workItem from="1491914593883" duration="3133000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21863000" />
+    <option name="totallyTimeSpent" value="25978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="19" width="1366" height="748" extended-state="6" />
+    <frame x="0" y="20" width="1910" height="1057" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1764706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17700052" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25559106" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25668448" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -411,13 +379,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="40" lean-forward="false" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/systemjs.config.server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -583,27 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="1" lean-forward="false" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rest_Service/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
@@ -701,14 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="42" lean-forward="false" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -743,6 +675,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#input#2;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="64" column="33" lean-forward="false" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="70" column="37" lean-forward="false" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/DatabaseConnection.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -759,29 +735,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="32" lean-forward="true" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="39" column="48" lean-forward="false" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="435">
+          <caret line="33" column="53" lean-forward="false" selection-start-line="33" selection-start-column="53" selection-end-line="33" selection-end-column="53" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/DatabaseConnection.js">
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="34" column="52" lean-forward="false" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+        <state relative-caret-position="398">
+          <caret line="51" column="5" lean-forward="false" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="46" column="45" lean-forward="false" selection-start-line="46" selection-start-column="45" selection-end-line="46" selection-end-column="45" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>

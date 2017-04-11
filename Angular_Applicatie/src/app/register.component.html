@@ -6,8 +6,9 @@
     <div class="form">
       <form class="register-form">
         <input #username placeholder="username"/>
-        <input #password placeholder="password"/>
-        <button (click)="register(username.value,password.value)">create</button>
+        <input #password placeholder="password" type="password"/>
+        <input #licence placeholder="licentie" style="text-transform:uppercase"/>
+        <button (click)="register(username.value,password.value, licence.value)">create</button>
         <p class="message">Already registered? <a [routerLink]="['/login']" >Sign In</a></p>
       </form>
     </div>

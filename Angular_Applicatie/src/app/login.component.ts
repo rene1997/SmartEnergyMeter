@@ -38,17 +38,30 @@ export class LoginComponent implements OnInit{
     return this.http.post(this.loginUrl,body, options).subscribe(
             data => this.loginResponse(data),
             err => this.handleError(err),
-            () => console.log('Random Quote Complete'))
+            () => console.log('login completed'))
   }
 
   loginResponse(res: Response){
     console.info(res['_body']);
     var obJson = JSON.parse(res['_body']);
-    console.log(obJson);
+
+    //remove old userdata
+    while(document.getElementById("userData")){
+      var element = document.getElementById("userData");
+      element.parentNode.removeChild(element);
+    }
+
+    var data = document.createElement("LABEL");
+    data.id = "userData";
+    data.innerText = JSON.stringify(obJson);
+    data.style.visibility = "hidden";
+    document.body.appendChild(data);
+
     this.router.navigate(['hardware']);
   }
 
   handleError(error:Response){
     console.info(error.toString());
+    window.alert("failed to login")
   }
 }
