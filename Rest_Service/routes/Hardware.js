@@ -188,7 +188,7 @@ module.exports = {
     GetSpecificDay : function (req,res) {
         var hardwareId = req.body.hardwareId;
         var date = req.body.date;
-        var startDate= moment(date).setHours(0,0,0,0);
+        var startDate= moment(date).set({hour:0, second:0, millisecond:0});
         database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema,function (table) {
            table.find(
                {
