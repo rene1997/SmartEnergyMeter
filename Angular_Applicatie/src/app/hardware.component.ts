@@ -64,4 +64,22 @@ export class HardwareComponent implements OnInit{
     handleError(error:Response){
         console.info(error.toString());
     }
+
+    onSelect(hardware : Hardwares){
+        console.log(hardware);
+
+        //remove old userdata
+        while(document.getElementById("hardwareData")){
+            var element = document.getElementById("hardwareData");
+            element.parentNode.removeChild(element);
+        }
+
+        var data = document.createElement("LABEL");
+        data.id = "hardwareData";;
+        data.innerText = JSON.stringify(hardware);
+        data.style.visibility = "hidden";
+        document.body.appendChild(data);
+
+        this.router.navigate(['meterkastMenu'])
+    }
 }

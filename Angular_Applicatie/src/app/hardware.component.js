@@ -53,6 +53,21 @@ var HardwareComponent = (function () {
     HardwareComponent.prototype.handleError = function (error) {
         console.info(error.toString());
     };
+    HardwareComponent.prototype.onSelect = function (hardware) {
+        console.log(hardware);
+        //remove old userdata
+        while (document.getElementById("hardwareData")) {
+            var element = document.getElementById("hardwareData");
+            element.parentNode.removeChild(element);
+        }
+        var data = document.createElement("LABEL");
+        data.id = "hardwareData";
+        ;
+        data.innerText = JSON.stringify(hardware);
+        data.style.visibility = "hidden";
+        document.body.appendChild(data);
+        this.router.navigate(['meterkastMenu']);
+    };
     __decorate([
         core_1.ViewChild(login_component_1.LoginComponent), 
         __metadata('design:type', login_component_1.LoginComponent)

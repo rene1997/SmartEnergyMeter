@@ -24,6 +24,9 @@ var MeterkastMenuComponent = (function () {
         this.pieChartLabels = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
         this.pieChartData = [300, 500, 100];
     }
+    MeterkastMenuComponent.prototype.ngOnInit = function () {
+        var data = document.getElementById("hardwareData");
+    };
     MeterkastMenuComponent.prototype.randomizeType = function () {
         this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
         this.pieChartType = this.pieChartType === 'doughnut' ? 'pie' : 'doughnut';

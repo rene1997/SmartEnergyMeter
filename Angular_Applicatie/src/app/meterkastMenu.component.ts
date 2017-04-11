@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response }          from '@angular/http';
 import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
@@ -25,6 +25,13 @@ export class MeterkastMenuComponent{
   // Pie
   public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
   public pieChartData:number[] = [300, 500, 100];
+
+  ngOnInit() {
+    var data = document.getElementById("hardwareData");
+
+
+
+  }
 
   public randomizeType():void {
     this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
