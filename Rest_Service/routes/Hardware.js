@@ -35,9 +35,19 @@ function addLiveDataToHistory(liveData){
                 console.log(err);
             }else{
                 console.log("added: " + newMeasurement);
+                removeLiveData(hardwareId);
             }
         });
     });
+}
+
+function removeLiveData(hardwareId){
+    database.connectToDatabase(database.LiveMeasurements, database.LiveMeasurementsSchema, function (table) {
+        table.remove({hardwareId : hardwareId},function(){
+            console.log("removed live data");
+        });
+
+    })
 }
 
 function calculateDataSpeed(data, callback){

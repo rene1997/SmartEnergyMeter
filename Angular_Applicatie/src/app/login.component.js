@@ -8,10 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var http_1 = require('@angular/http');
-var http_2 = require('@angular/http');
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var http_1 = require("@angular/http");
+var http_2 = require("@angular/http");
 var LoginComponent = (function () {
     function LoginComponent(route, router, http) {
         this.route = route;
@@ -42,16 +43,18 @@ var LoginComponent = (function () {
     LoginComponent.prototype.handleError = function (error) {
         console.info(error.toString());
     };
-    LoginComponent = __decorate([
-        core_1.Component({
-            moduleId: module.id,
-            selector: 'login',
-            templateUrl: './login.component.html',
-            styleUrls: ['./login.component.css']
-        }), 
-        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, http_1.Http])
-    ], LoginComponent);
     return LoginComponent;
 }());
+LoginComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'login',
+        templateUrl: './login.component.html',
+        styleUrls: ['./login.component.css']
+    }),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        http_1.Http])
+], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
