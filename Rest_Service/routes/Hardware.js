@@ -23,7 +23,7 @@ function addLiveDataToHistory(liveData){
     if(!liveData[0]) return;
     var hardwareId = liveData[0].hardwareId;
     var totalKwh = liveData.length / liveData[0].kwh ;
-    var startHour = moment().add(1,"hour").format(); // -1 past hour +2 for local time
+    var startHour = moment().add(1,"hours").format(); // -1 past hour +2 for local time
 
     console.log("device: " + hardwareId);
     console.log("total kwh: " + totalKwh);
@@ -188,12 +188,12 @@ module.exports = {
     GetSpecificDay : function (req,res) {
         var hardwareId = req.body.hardwareId;
         var date = req.body.date;
-        var startDate= moment(date).hour(0);
+        var startDate= moment(date).setHours(0,0,0,0);
         database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema,function (table) {
            table.find(
                {
                    hardwareId : hardwareId,
-                   time : {$gte: new Date(startDate), $lt:new Date(startDate.add(1,'day'))}
+                   time : {$gte: new Date(startDate), $lt:new Date(startDate.add(1,'d'))}
                }).exec(function (err, data) {
                 if(err) return console.log(err);
 
