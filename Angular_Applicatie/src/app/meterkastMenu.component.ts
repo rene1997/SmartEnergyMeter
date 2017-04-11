@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {Component, OnInit, style, ViewChild} from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Http, Response }          from '@angular/http';
 import { Headers, RequestOptions, URLSearchParams } from '@angular/http';
@@ -20,9 +20,10 @@ export class MeterkastMenuComponent{
     ];
 
     public lineChartType:string = 'line';
-
+    public dateVisible = false;
     private liveMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getCurrentSpeed";
     private historyMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getHistory";
+    private dateMeasurementsUrl = "http://keijzersoft.nl:8081/apiV1/getDateMeasurements";
     private hardwareInfo : JSON;
 
     constructor(
@@ -53,7 +54,7 @@ export class MeterkastMenuComponent{
         },10000);
     }
 
-    private getHistoryData(){
+    getHistoryData(){
         let hardwareId = this.hardwareInfo['hardwareId'];
         let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
         let options = new RequestOptions({headers:headers});
@@ -84,10 +85,10 @@ export class MeterkastMenuComponent{
         )
     }
 
+
+
     private setHistoryMeasurement(data:Response){
         console.log("got history data");
-        //clear previous data
-
         //set vars
         let obJson = JSON.parse(data['_body']);
         let dataIndex = 0;
@@ -96,7 +97,7 @@ export class MeterkastMenuComponent{
         }
 
         let _lineChartData:Array<any> = new Array(1);
-        _lineChartData[0] = {data: new Array(this.lineChartData[0].data.length), label: this.lineChartData[0].label};
+        _lineChartData[0] = {data: new Array(this.lineChartData[0].data.length), label: "power consumption past 24 hours (Watt/Hour)"};
         for (let j = 0; j < this.lineChartData[0].data.length; j++, dataIndex ++) {
             let usage = obJson[dataIndex].usedPower;
             _lineChartData[0].data[j] = usage * 1000;
@@ -117,6 +118,59 @@ export class MeterkastMenuComponent{
 
     private handleError(error:Response){
         console.info(error.toString());
+    }
+
+    setSelectedDateVisible(){
+        this.dateVisible = !this.dateVisible;
+    }
+    getSelectedDate(){
+        var date = document.getElementById("selectedDate").value;
+        var hardwareId = this.hardwareInfo['hardwareId'];
+
+        let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});
+        let options = new RequestOptions({headers:headers});
+        let urlSearchParams = new URLSearchParams();
+
+        urlSearchParams.append('hardwareId', '' + hardwareId);
+        urlSearchParams.append('date', '' + date);
+        urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
+        let body = urlSearchParams.toString();
+        return this.http.post(this.dateMeasurementsUrl, body, options).subscribe(
+            data  => this.setSelectedDate(data),
+            err   => this.handleError(err),
+            ()    => console.log("Hardware date request complete")
+        )
+    }
+
+    setSelectedDate(data : Response){
+        let obJson = JSON.parse(data['_body']);
+        if(obJson.length <= 0)return;
+
+        let label = "power usage from: ";
+        label = label + obJson[0]['time'].split('T')[0] + ' (Watt/Hour)'
+
+        console.log("got awesome date response:");
+        console.log(obJson[0]['usedPower']);
+        let dataIndex = 0;
+        if(obJson.length > 24){
+            dataIndex = obJson.length - 24;
+
+        }
+
+        let _lineChartData:Array<any> = new Array(1);
+        _lineChartData[0] = {data: new Array(this.lineChartData[0].data.length), label: label};
+        for (let j = 0; j < 24; j++, dataIndex ++) {
+            try{
+                let usage = obJson[dataIndex]['usedPower'];
+                _lineChartData[0].data[j] = usage * 1000;
+                let time = obJson[dataIndex].time.split('T')[1].split('.')[0];
+                this.lineChartLabels[j] = time.substring(0, time.length -3);
+            }catch (ex){
+                console.log(j,)
+            }
+
+        }
+        this.lineChartData = _lineChartData;
     }
 
     public randomizeType():void {

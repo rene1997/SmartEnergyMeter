@@ -8,6 +8,33 @@ form {
   padding-bottom: 25px;
 }
 
+.overwatch{
+  width: 100% !important;
+  display: inline-block;
+}
+
+.col-md-6{
+  width: 75% !important;
+  height: auto !important;
+  float:left;
+}
+.settings{
+  display: list-item;
+  margin: 25px;
+  float:left;
+
+  position: relative;
+  z-index: 1;
+  background: #0f3443;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+div{
+  margin-bottom: 25px;
+}
+
 a.close {
   float: right;
 }
@@ -18,4 +45,17 @@ input[type=text]:focus{
 
 h2{
   text-align: center;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  cursor: pointer;
 }

@@ -23,8 +23,10 @@ var MeterkastMenuComponent = (function () {
             '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'
         ];
         this.lineChartType = 'line';
+        this.dateVisible = false;
         this.liveMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getCurrentSpeed";
         this.historyMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getHistory";
+        this.dateMeasurementsUrl = "http://keijzersoft.nl:8081/apiV1/getDateMeasurements";
     }
     MeterkastMenuComponent.prototype.ngOnInit = function () {
         var data = document.getElementById("hardwareData");
@@ -67,7 +69,6 @@ var MeterkastMenuComponent = (function () {
     };
     MeterkastMenuComponent.prototype.setHistoryMeasurement = function (data) {
         console.log("got history data");
-        //clear previous data
         //set vars
         var obJson = JSON.parse(data['_body']);
         var dataIndex = 0;
@@ -75,7 +76,7 @@ var MeterkastMenuComponent = (function () {
             dataIndex = obJson.length - 24;
         }
         var _lineChartData = new Array(1);
-        _lineChartData[0] = { data: new Array(this.lineChartData[0].data.length), label: this.lineChartData[0].label };
+        _lineChartData[0] = { data: new Array(this.lineChartData[0].data.length), label: "power consumption past 24 hours (Watt/Hour)" };
         for (var j = 0; j < this.lineChartData[0].data.length; j++, dataIndex++) {
             var usage = obJson[dataIndex].usedPower;
             _lineChartData[0].data[j] = usage * 1000;
@@ -93,6 +94,49 @@ var MeterkastMenuComponent = (function () {
     };
     MeterkastMenuComponent.prototype.handleError = function (error) {
         console.info(error.toString());
+    };
+    MeterkastMenuComponent.prototype.setSelectedDateVisible = function () {
+        this.dateVisible = !this.dateVisible;
+    };
+    MeterkastMenuComponent.prototype.getSelectedDate = function () {
+        var _this = this;
+        var date = document.getElementById("selectedDate").value;
+        var hardwareId = this.hardwareInfo['hardwareId'];
+        var headers = new http_2.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        var options = new http_2.RequestOptions({ headers: headers });
+        var urlSearchParams = new http_2.URLSearchParams();
+        urlSearchParams.append('hardwareId', '' + hardwareId);
+        urlSearchParams.append('date', '' + date);
+        urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
+        var body = urlSearchParams.toString();
+        return this.http.post(this.dateMeasurementsUrl, body, options).subscribe(function (data) { return _this.setSelectedDate(data); }, function (err) { return _this.handleError(err); }, function () { return console.log("Hardware date request complete"); });
+    };
+    MeterkastMenuComponent.prototype.setSelectedDate = function (data) {
+        var obJson = JSON.parse(data['_body']);
+        if (obJson.length <= 0)
+            return;
+        var label = "power usage from: ";
+        label = label + obJson[0]['time'].split('T')[0] + ' (Watt/Hour)';
+        console.log("got awesome date response:");
+        console.log(obJson[0]['usedPower']);
+        var dataIndex = 0;
+        if (obJson.length > 24) {
+            dataIndex = obJson.length - 24;
+        }
+        var _lineChartData = new Array(1);
+        _lineChartData[0] = { data: new Array(this.lineChartData[0].data.length), label: label };
+        for (var j = 0; j < 24; j++, dataIndex++) {
+            try {
+                var usage = obJson[dataIndex]['usedPower'];
+                _lineChartData[0].data[j] = usage * 1000;
+                var time = obJson[dataIndex].time.split('T')[1].split('.')[0];
+                this.lineChartLabels[j] = time.substring(0, time.length - 3);
+            }
+            catch (ex) {
+                console.log(j);
+            }
+        }
+        this.lineChartData = _lineChartData;
     };
     MeterkastMenuComponent.prototype.randomizeType = function () {
         this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
