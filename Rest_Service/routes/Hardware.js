@@ -189,7 +189,7 @@ module.exports = {
         var hardwareId = req.body.hardwareId;
         var date = req.body.date;
         var startDate= moment(date);
-        database.connectToDatabase(database.HistoryMeasurement, database.LiveMeasurementsSchema,function (table) {
+        database.connectToDatabase(database.HistoryMeasurement, database.HistoryMeasurementSchema,function (table) {
            table.find(
                {
                    hardwareId : hardwareId,
