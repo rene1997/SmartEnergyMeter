@@ -18,6 +18,7 @@ router.post("/addMeasurement", hardwareFile.AddMeasurement);
 router.post("/getLastMeasurement", hardwareFile.GetCurrentMeasurement);
 
 router.post("/getHistory", hardwareFile.GetHistory);
+router.post("/getDateMeasurements", hardwareFile.GetSpecificDay);
 router.post("/getCurrentSpeed", hardwareFile.GetCurrentSpeed);
 
 router.post("*", function(req,res){

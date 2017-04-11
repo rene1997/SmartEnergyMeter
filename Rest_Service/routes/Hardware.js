@@ -184,6 +184,24 @@ module.exports = {
            });
         });
     },
+
+    GetSpecificDay : function (req,res) {
+        var hardwareId = req.body.hardwareId;
+        var date = req.body.date;
+        var startDate= moment(date);
+        database.connectToDatabase(database.HistoryMeasurement, database.LiveMeasurementsSchema,function (table) {
+           table.find(
+               {
+                   hardwareId : hardwareId,
+                   time : {$gte: new Date(startDate), $lt:new Date(startDate.add(1,'day'))}
+               }).exec(function (err, data) {
+                if(err) return console.log(err);
+
+                res.json(data);
+                return console.log('succesfull returned for specific day');
+           }) ;
+        });
+    },
     
     GetCurrentSpeed : function (req,res) {
         var hardwareId = req.body.hardwareId;
