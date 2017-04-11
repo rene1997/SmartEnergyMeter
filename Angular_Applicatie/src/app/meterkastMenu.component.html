@@ -1,9 +1,10 @@
 
 <body>
   <div class="full" ng-view></div>
+  <h2 id="header"></h2>
   <div class="col-md-6">
     <canvas baseChart
-            [data]="lineChartData"
+            [datasets]="lineChartData"
             [labels]="lineChartLabels"
             [options]="lineChartOptions"
             [chartType]="lineChartType"
@@ -11,7 +12,7 @@
             (chartClick)="chartClicked($event)"></canvas>
   </div>
   <div class="col-md-6">
-    <label>Current power usage: </label>
+    <label>Current power usage: (Watt/Hour) </label>
     <label id="currentSpeed">0</label>
     <!--<canvas baseChart-->
             <!--[data]="pieChartData"-->

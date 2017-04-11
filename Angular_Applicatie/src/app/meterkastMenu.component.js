@@ -17,42 +17,43 @@ var MeterkastMenuComponent = (function () {
         this.route = route;
         this.router = router;
         this.http = http;
-        this.liveMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getCurrentSpeed";
-        this.lineChartData = [
-            [65, 59, 80, 81, 56, 55, 40],
-            [28, 48, 40, 19, 86, 27, 90]
+        this.lineChartData = [{ data: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23], label: 'power consumption past 24 hours (Watt/Hour)' }];
+        this.lineChartLabels = [
+            '0:00', '1:00', '2:00', '3:00', '4:00', '5:00', '6:00', '7:00', '8:00', '9:00', '10:00', '11:00',
+            '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'
         ];
-        this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
         this.lineChartType = 'line';
-        this.pieChartType = 'pie';
-        // Pie
-        this.pieChartLabels = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-        this.pieChartData = [300, 500, 100];
+        this.liveMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getCurrentSpeed";
+        this.historyMeasurementUrl = "http://keijzersoft.nl:8081/apiV1/getHistory";
     }
     MeterkastMenuComponent.prototype.ngOnInit = function () {
         var data = document.getElementById("hardwareData");
         if (!data)
             return this.router.navigate(['login']);
         console.log(data.innerHTML);
-        this.refreshPowerUsage(data.innerHTML);
+        this.hardwareInfo = JSON.parse(data.innerHTML);
+        var header2 = document.getElementById('header');
+        header2.innerHTML = 'Status ' + this.hardwareInfo['hardwareName'];
+        this.refreshPowerUsage();
+        this.getHistoryData();
     };
-    MeterkastMenuComponent.prototype.randomizeType = function () {
-        this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
-        this.pieChartType = this.pieChartType === 'doughnut' ? 'pie' : 'doughnut';
-    };
-    MeterkastMenuComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    MeterkastMenuComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
-    MeterkastMenuComponent.prototype.refreshPowerUsage = function (hardwareData) {
-        var hardwareId = JSON.parse(hardwareData).hardwareId;
-        this.getLiveMeasurements(hardwareId);
+    MeterkastMenuComponent.prototype.refreshPowerUsage = function () {
+        this.getLiveMeasurements(this.hardwareInfo['hardwareId']);
         var self = this;
         setInterval(function () {
-            self.getLiveMeasurements(hardwareId);
+            self.getLiveMeasurements(self.hardwareInfo['hardwareId']);
         }, 10000);
+    };
+    MeterkastMenuComponent.prototype.getHistoryData = function () {
+        var _this = this;
+        var hardwareId = this.hardwareInfo['hardwareId'];
+        var headers = new http_2.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        var options = new http_2.RequestOptions({ headers: headers });
+        var urlSearchParams = new http_2.URLSearchParams();
+        urlSearchParams.append('hardwareId', '' + hardwareId);
+        urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
+        var body = urlSearchParams.toString();
+        return this.http.post(this.historyMeasurementUrl, body, options).subscribe(function (data) { return _this.setHistoryMeasurement(data); }, function (err) { return _this.handleError(err); }, function () { return console.log("Hardware request complete"); });
     };
     MeterkastMenuComponent.prototype.getLiveMeasurements = function (hardwareId) {
         var _this = this;
@@ -64,15 +65,43 @@ var MeterkastMenuComponent = (function () {
         var body = urlSearchParams.toString();
         return this.http.post(this.liveMeasurementUrl, body, options).subscribe(function (data) { return _this.setLiveMeasurement(data); }, function (err) { return _this.handleError(err); }, function () { return console.log("Hardware request complete"); });
     };
+    MeterkastMenuComponent.prototype.setHistoryMeasurement = function (data) {
+        console.log("got history data");
+        //clear previous data
+        //set vars
+        var obJson = JSON.parse(data['_body']);
+        var dataIndex = 0;
+        if (obJson.length > 24) {
+            dataIndex = obJson.length - 24;
+        }
+        var _lineChartData = new Array(1);
+        _lineChartData[0] = { data: new Array(this.lineChartData[0].data.length), label: this.lineChartData[0].label };
+        for (var j = 0; j < this.lineChartData[0].data.length; j++, dataIndex++) {
+            var usage = obJson[dataIndex].usedPower;
+            _lineChartData[0].data[j] = usage * 1000;
+            var time = obJson[dataIndex].time.split('T')[1].split('.')[0];
+            this.lineChartLabels[j] = time.substring(0, time.length - 3);
+        }
+        this.lineChartData = _lineChartData;
+    };
     MeterkastMenuComponent.prototype.setLiveMeasurement = function (data) {
         var obJson = JSON.parse(data['_body']);
+        var speedLabel = document.getElementById("currentSpeed");
         console.log(obJson);
-        var speed = document.getElementById("currentSpeed");
         var speedNumber = "" + obJson.wh;
-        speed.innerHTML = speedNumber.split('.')[0];
+        speedLabel.innerHTML = speedNumber.split('.')[0];
     };
     MeterkastMenuComponent.prototype.handleError = function (error) {
         console.info(error.toString());
+    };
+    MeterkastMenuComponent.prototype.randomizeType = function () {
+        this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
+    };
+    MeterkastMenuComponent.prototype.chartClicked = function (e) {
+        console.log(e);
+    };
+    MeterkastMenuComponent.prototype.chartHovered = function (e) {
+        console.log(e);
     };
     MeterkastMenuComponent = __decorate([
         core_1.Component({
