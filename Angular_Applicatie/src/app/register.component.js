@@ -21,7 +21,7 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.ngOnInit = function () {
     };
-    RegisterComponent.prototype.register = function (username, password) {
+    RegisterComponent.prototype.register = function (username, password, licence) {
         var _this = this;
         console.log("trying to regiser:");
         var headers = new http_2.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
@@ -29,16 +29,19 @@ var RegisterComponent = (function () {
         var urlSearchParams = new http_2.URLSearchParams();
         urlSearchParams.append('username', username);
         urlSearchParams.append('password', password);
+        urlSearchParams.append('licence', licence);
         urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
         var body = urlSearchParams.toString();
         return this.http.post(this.registerUrl, body, options).subscribe(function (data) { return _this.registerResponse(data); }, function (err) { return _this.handleError(err); }, function () { return console.log("Register request complete"); });
     };
     RegisterComponent.prototype.registerResponse = function (res) {
         console.info(res['_body']);
+        window.alert("successfull registered account");
         this.router.navigate(['login']);
     };
     RegisterComponent.prototype.handleError = function (error) {
         console.info(error.toString());
+        window.alert("failed to register account \noriginal error: \n" + error.toString());
     };
     RegisterComponent = __decorate([
         core_1.Component({

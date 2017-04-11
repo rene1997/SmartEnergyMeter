@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit{
 
   }
 
-  register(username:string,password:string){
+  register(username:string,password:string, licence:string){
     console.log("trying to regiser:");
     let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded'});
     let options = new RequestOptions({ headers: headers });
@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit{
     let urlSearchParams = new URLSearchParams();
     urlSearchParams.append('username',username);
     urlSearchParams.append('password',password);
+    urlSearchParams.append('licence',licence);
     urlSearchParams.append('serverKey', '175d6c2c2632e0f87a07f32e88a690104f921b517c7af1c6333de2dfad9be8e3');
     let body = urlSearchParams.toString()
 
@@ -42,14 +43,15 @@ export class RegisterComponent implements OnInit{
   }
 
   registerResponse(res: Response){
+
     console.info(res['_body']);
+    window.alert("successfull registered account");
     this.router.navigate(['login']);
 
   }
 
   handleError(error: Response){
     console.info(error.toString());
+    window.alert("failed to register account \noriginal error: \n" + error.toString());
   }
-
-
 }
