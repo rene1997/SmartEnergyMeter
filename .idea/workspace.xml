@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts" line="74" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="799ae306-e25d-4998-93f2-14453ebaefad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js.map" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts" afterPath="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/Angular_Applicatie/node_modules/" />
     <ignored path="$PROJECT_DIR$/Angular_Applicatie/src/app/app.module.js/" />
@@ -35,77 +39,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Hardware.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
+      <file leaf-file-name="meterkastMenu.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+            <state relative-caret-position="180">
+              <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
               <folding>
-                <element signature="e#0#37#0" expanded="false" />
+                <element signature="e#0#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts">
+      <file leaf-file-name="meterkastMenu.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/routes/User.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#37#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="V1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/routes/V1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="48" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Rest_Service/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="14" lean-forward="false" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -141,9 +91,10 @@
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts" />
-        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.html" />
         <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html" />
+        <option value="$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts" />
       </list>
     </option>
   </component>
@@ -392,7 +343,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28462000" />
+    <option name="totallyTimeSpent" value="33322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="19" width="1920" height="1060" extended-state="6" />
@@ -456,13 +407,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -686,14 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -709,26 +645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
           <caret line="55" column="44" lean-forward="true" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -738,7 +658,7 @@
         <state relative-caret-position="255">
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -748,17 +668,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
+            <element signature="e#0#46#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -779,21 +689,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts">
+    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/User.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="234">
+          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="38" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -805,38 +707,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="48" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="48" />
+        <state relative-caret-position="255">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/User.js">
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="51" column="38" lean-forward="false" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="38" />
+        <state relative-caret-position="675">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#0#37#0" expanded="false" />
+            <element signature="e#0#50#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/V1.js">
+    <entry file="file://$PROJECT_DIR$/Rest_Service/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="50" lean-forward="true" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Rest_Service/routes/Hardware.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+        <state relative-caret-position="1599">
+          <caret line="184" column="4" lean-forward="false" selection-start-line="184" selection-start-column="4" selection-end-line="184" selection-end-column="4" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/dashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Rest_Service/routes/V1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="29" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/hardware.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="15" selection-end-line="14" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Angular_Applicatie/src/app/meterkastMenu.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="36" lean-forward="true" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
