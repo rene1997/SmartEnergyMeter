@@ -91,7 +91,7 @@ export class MeterkastMenuComponent{
         console.log("got history data");
         //set vars
         let obJson = JSON.parse(data['_body']);
-        let dataIndex = 0;
+        let dataIndex, totalUsed = 0;
         if(obJson.length > 24){
             dataIndex = obJson.length - 24;
         }
@@ -100,11 +100,14 @@ export class MeterkastMenuComponent{
         _lineChartData[0] = {data: new Array(this.lineChartData[0].data.length), label: "power consumption past 24 hours (Watt/Hour)"};
         for (let j = 0; j < this.lineChartData[0].data.length; j++, dataIndex ++) {
             let usage = obJson[dataIndex].usedPower;
+            totalUsed += usage;
             _lineChartData[0].data[j] = usage * 1000;
             let time = obJson[dataIndex].time.split('T')[1].split('.')[0];
             this.lineChartLabels[j] = time.substring(0, time.length -3);
         }
         this.lineChartData = _lineChartData;
+        var totalUsedString = "" + totalUsed;
+        document.getElementById("totalused").innerHTML = totalUsedString.substring(0,4);
     }
 
     private setLiveMeasurement(data:Response){
@@ -152,6 +155,7 @@ export class MeterkastMenuComponent{
         console.log("got awesome date response:");
         console.log(obJson[0]['usedPower']);
         let dataIndex = 0;
+        let totalUsed = 0;
         if(obJson.length > 24){
             dataIndex = obJson.length - 24;
 
@@ -162,6 +166,7 @@ export class MeterkastMenuComponent{
         for (let j = 0; j < 24; j++, dataIndex ++) {
             try{
                 let usage = obJson[dataIndex]['usedPower'];
+                totalUsed += usage;
                 _lineChartData[0].data[j] = usage * 1000;
                 let time = obJson[dataIndex].time.split('T')[1].split('.')[0];
                 this.lineChartLabels[j] = time.substring(0, time.length -3);
@@ -171,6 +176,8 @@ export class MeterkastMenuComponent{
 
         }
         this.lineChartData = _lineChartData;
+        var totalUsedString = "" + totalUsed;
+        document.getElementById("totalused").innerHTML = totalUsedString.substring(0,4);
     }
 
     public randomizeType():void {

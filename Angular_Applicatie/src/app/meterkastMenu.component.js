@@ -71,7 +71,7 @@ var MeterkastMenuComponent = (function () {
         console.log("got history data");
         //set vars
         var obJson = JSON.parse(data['_body']);
-        var dataIndex = 0;
+        var dataIndex, totalUsed = 0;
         if (obJson.length > 24) {
             dataIndex = obJson.length - 24;
         }
@@ -79,11 +79,14 @@ var MeterkastMenuComponent = (function () {
         _lineChartData[0] = { data: new Array(this.lineChartData[0].data.length), label: "power consumption past 24 hours (Watt/Hour)" };
         for (var j = 0; j < this.lineChartData[0].data.length; j++, dataIndex++) {
             var usage = obJson[dataIndex].usedPower;
+            totalUsed += usage;
             _lineChartData[0].data[j] = usage * 1000;
             var time = obJson[dataIndex].time.split('T')[1].split('.')[0];
             this.lineChartLabels[j] = time.substring(0, time.length - 3);
         }
         this.lineChartData = _lineChartData;
+        var totalUsedString = "" + totalUsed;
+        document.getElementById("totalused").innerHTML = totalUsedString.substring(0, 4);
     };
     MeterkastMenuComponent.prototype.setLiveMeasurement = function (data) {
         var obJson = JSON.parse(data['_body']);
@@ -120,6 +123,7 @@ var MeterkastMenuComponent = (function () {
         console.log("got awesome date response:");
         console.log(obJson[0]['usedPower']);
         var dataIndex = 0;
+        var totalUsed = 0;
         if (obJson.length > 24) {
             dataIndex = obJson.length - 24;
         }
@@ -128,6 +132,7 @@ var MeterkastMenuComponent = (function () {
         for (var j = 0; j < 24; j++, dataIndex++) {
             try {
                 var usage = obJson[dataIndex]['usedPower'];
+                totalUsed += usage;
                 _lineChartData[0].data[j] = usage * 1000;
                 var time = obJson[dataIndex].time.split('T')[1].split('.')[0];
                 this.lineChartLabels[j] = time.substring(0, time.length - 3);
@@ -137,6 +142,8 @@ var MeterkastMenuComponent = (function () {
             }
         }
         this.lineChartData = _lineChartData;
+        var totalUsedString = "" + totalUsed;
+        document.getElementById("totalused").innerHTML = totalUsedString.substring(0, 4);
     };
     MeterkastMenuComponent.prototype.randomizeType = function () {
         this.lineChartType = this.lineChartType === 'line' ? 'bar' : 'line';
