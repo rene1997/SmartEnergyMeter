@@ -14,7 +14,7 @@ form {
 }
 
 .col-md-6{
-  width: 100% !important;
+  width: 80% !important;
   height: auto !important;
   float:left;
 }
@@ -22,7 +22,7 @@ form {
   display: list-item;
   margin: 25px;
   float:left;
-  width: 30%;
+  width: 25%;
   position: relative;
   z-index: 1;
   background: #0f3443;
