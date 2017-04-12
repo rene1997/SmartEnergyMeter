@@ -1,11 +1,6 @@
 
 <body>
   <h2 id="header"></h2>
-
-  <div class="LiveData">
-    <label>Current power usage: (Watt/Hour) </label>
-    <label id="currentSpeed">0</label>
-  </div>
   <div class="overwatch">
     <div class="col-md-6">
       <canvas baseChart
@@ -16,14 +11,20 @@
               (chartHover)="chartHovered($event)"
               (chartClick)="chartClicked($event)"></canvas>
     </div>
-    <div class="settings">
-      <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
-        <button (click)="randomizeType()" style="display: inline-block">Toggle graph layout</button>
+      <div class="settings">
+        <div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
+          <button (click)="randomizeType()" style="display: inline-block">Toggle graph layout</button>
+        </div>
+        <div><button (click)="getHistoryData()"> View past 24 hours</button></div>
+        <div><button (click)="setSelectedDateVisible()">  View custom date</button></div>
+        <div><input (change)="getSelectedDate()" *ngIf="dateVisible" id="selectedDate"  type="date"></div>
       </div>
-      <div><button (click)="getHistoryData()"> View past 24 hours</button></div>
-      <div><button (click)="setSelectedDateVisible()">  View custom date</button></div>
-      <div><input (change)="getSelectedDate()" *ngIf="dateVisible" id="selectedDate"  type="date"></div>
-    </div>
+      <div class="settings">
+        <div class="LiveData">
+          <label>Current power usage: (Watt/Hour) </label>
+          <label id="currentSpeed">0</label>
+        </div>
+      </div>
   </div>
 
 
