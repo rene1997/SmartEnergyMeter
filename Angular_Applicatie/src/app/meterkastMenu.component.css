@@ -22,7 +22,7 @@ form {
   display: list-item;
   margin: 25px;
   float:left;
-
+  width: 30%;
   position: relative;
   z-index: 1;
   background: #0f3443;

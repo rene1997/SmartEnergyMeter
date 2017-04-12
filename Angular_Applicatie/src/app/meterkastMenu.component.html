@@ -2,18 +2,22 @@
 <body>
   <h2 id="header"></h2>
   <div class="settings">
-    <div style="margin-top: 10px;height: 100px">
-      <div>
-        <button (click)="randomizeType()" style="display: inline-block">Toggle graph layout</button>
+      <div style="margin-top: 10px;height: 100px;">
+        <div>
+          <button (click)="randomizeType()" style="display: inline-block">Toggle graph layout</button>
+        </div>
+        <div><button (click)="getHistoryData()"> View past 24 hours</button></div>
       </div>
-      <div><button (click)="getHistoryData()"> View past 24 hours</button></div>
-      <div><button (click)="setSelectedDateVisible()">  View custom date</button></div>
-      <div><input (change)="getSelectedDate()" *ngIf="dateVisible" id="selectedDate"  type="date">
-    </div>
-   </div>
   </div>
   <div class="settings">
-    <div class="LiveData"style="margin-top: 10px;height: 100px" >
+    <div  style="margin-top: 10px;height: 100px;">
+        <div><button (click)="setSelectedDateVisible()">  View custom date</button></div>
+        <div><input (change)="getSelectedDate()" *ngIf="dateVisible" id="selectedDate"  type="date">
+      </div>
+    </div>
+  </div>
+  <div class="settings">
+    <div class="LiveData" style="margin-top: 10px;height: 100px;">
       <label>Current power usage: (Watt/Hour) </label>
       <label id="currentSpeed">0</label>
     </div>
