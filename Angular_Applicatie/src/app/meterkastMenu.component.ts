@@ -124,7 +124,7 @@ export class MeterkastMenuComponent{
         this.dateVisible = !this.dateVisible;
     }
     getSelectedDate(){
-        var date = document.getElementById("selectedDate").value;
+        var date = (<HTMLInputElement>document.getElementById("selectedDate")).value;
         var hardwareId = this.hardwareInfo['hardwareId'];
 
         let headers = new Headers({'Content-Type':'application/x-www-form-urlencoded'});

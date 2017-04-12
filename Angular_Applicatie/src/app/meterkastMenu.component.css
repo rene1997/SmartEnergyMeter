@@ -14,7 +14,7 @@ form {
 }
 
 .col-md-6{
-  width: 75% !important;
+  width: 100% !important;
   height: auto !important;
   float:left;
 }
